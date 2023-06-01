@@ -1,9 +1,13 @@
 # Spotify Canvas Downloader
-Tool to get Canvas cover videos from Spotify tracks.
 
+Tool to get Canvas cover videos from Spotify tracks.
 
 ## ✨ [Try it out](https://canvastify.delitefully.com)
 
+### Start Script
+
+step 1: pip install requirements.txt
+step 2: uvicorn app:app --host localhost --port 3000
 
 ### Building
 
@@ -20,18 +24,24 @@ Tool to get Canvas cover videos from Spotify tracks.
   docker-compose up
   ```
 
-### Development 
-Recompile protocol buffer proto (useful when upgrading protobuff): 
+### Development
+
+Recompile protocol buffer proto (useful when upgrading protobuff):
+
 ```
 protoc ./protos/canvas.proto  --python_out=./src/
 ```
+
 Requires the [Protocol Buffers package](https://developers.google.com/protocol-buffers/docs/downloads).
+
 ### API
 
 ```http
 GET /api/canvas/:trackId
 ```
-Returns 
+
+Returns
+
 ```json
 {
     "success": boolean

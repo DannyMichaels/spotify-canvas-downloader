@@ -8,14 +8,10 @@ from constants import TOKEN_RENEW_TIME
 app = FastAPI()
 
 ORIGIN = os.getenv('HOST_ORIGIN')
-origins = [
-    ORIGIN,
-    "http://localhost:3000",
-]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
